@@ -224,3 +224,7 @@ class CthulhuCmd(cmd.Cmd):
 
     do_EOF = do_exit
     help_EOF = help_exit
+
+
+def main():
+    CthulhuCmd().cmdloop()
