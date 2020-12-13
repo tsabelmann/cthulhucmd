@@ -160,6 +160,10 @@ class CthulhuCmd(cmd.Cmd):
         else:
             print()
 
+    @staticmethod
+    def help_probe():
+        print("Probes ability against a random thrown D100 with/without bonus/malus dice")
+
     def do_roll(self, message):
         match = self.__dice_regex__.search(message)
 
@@ -206,6 +210,10 @@ class CthulhuCmd(cmd.Cmd):
 
         else:
             print()
+
+    @staticmethod
+    def help_roll():
+        print("Throws random dice plus additional values and sums them up")
 
     @staticmethod
     def postloop() -> None:
