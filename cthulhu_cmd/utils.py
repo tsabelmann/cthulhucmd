@@ -1,6 +1,10 @@
 """Module provides utility functions that are useful in the context of the Cthulhu pen and paper game.
 """
 
+# Import C
+from colorama import Fore, Back
+
+
 # Import R
 import random
 
@@ -8,24 +12,24 @@ import random
 # Probe Message Computation
 def probe_message(probe_value: int, die_value: int):
     if die_value == 1:
-        return "Critical success"
+        return Back.GREEN + Fore.LIGHTWHITE_EX + "Critical success"
     elif die_value <= (probe_value // 5):
-        return "Extreme success"
+        return Fore.GREEN + "Extreme success"
     elif die_value <= (probe_value // 2):
-        return "Difficult success"
+        return Fore.GREEN + "Difficult success"
     elif die_value <= probe_value:
-        return "Regular success"
+        return Fore.GREEN + "Regular success"
     else:
         if probe_value < 50:
             if die_value >= 96:
-                return "You are doomed!"
+                return Back.RED + Fore.LIGHTWHITE_EX + "You are doomed!"
             else:
-                return "You have screwed up!"
+                return Fore.RED + "You have screwed up!"
         else:
             if die_value == 100:
-                return "You are doomed!"
+                return Back.RED + Fore.LIGHTWHITE_EX + "You are doomed!"
             else:
-                return "You have screwed up!"
+                return Fore.RED + "You have screwed up!"
 
 
 # Compute bonus
