@@ -7,8 +7,12 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+colorama = "^0.4.4"
 
 [tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+cthulhu = "cthulhu_cmd.cli:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
